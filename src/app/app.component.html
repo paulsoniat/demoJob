@@ -1,19 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <div *ngIf="dataLoaded; else elseBlock">
 
-    <ul>
-      <li *ngFor="let tweet of tweetData; let i = index">
-        <div>
-          {{i}} {{tweet}}
-        </div>
-      </li>
-    </ul>
+<div class="box">
+  <div class="row header">
+    <div class="headerContainer">
+      <div class="headerNav">
+        Item 1
+        Item 2
+        Item 3
+      </div>
+      <div class="mode">
+        <span>Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" (click)="toggle()" >
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </div>
+  </div>
   
+  <div class="row content">
+    <b>
+      <div *ngIf="dataLoaded; else elseBlock">
+        <ul>
+          <li *ngFor="let tweet of tweetData; let i = index">
+            <div>
+              {{i}} {{tweet}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <ng-template #elseBlock><p>Spinner to show loading</p></ng-template>
+    </b>
   </div>
 
-  <ng-template #elseBlock><p>Spinner to show loading</p></ng-template>
-  
+  <div class="row footer">
+    <p><b>footer</b> (fixed height)</p>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

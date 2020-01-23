@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from './../environments/environment';
 
 import { Tweet } from './tweets';
 
@@ -8,7 +9,9 @@ import { Tweet } from './tweets';
 })
 export class apiService {
 
-  apiURL: string = '/tweetMe';
+  apiURL: string = environment.apiUrl;
+
+  tweetMe: string = '/tweetMe';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -26,7 +29,9 @@ export class apiService {
   public lastPage: string = "";    
   
   public getContacts(){
-    return this.httpClient.get<Tweet[]>(`${this.apiURL}`);
+    let tweetList = this.httpClient.get<Tweet[]>(`${this.apiURL + this.tweetMe}`); 
+    console.log(tweetList);
+    return tweetList;
 }
 
 }
