@@ -11,6 +11,13 @@ require('dotenv').config()
 const app = express();
 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+
 var T = new Twit({
  consumer_key:         process.env.ConsumerKey,
  consumer_secret:      process.env.ConsumerSecret,
@@ -26,6 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
 
 const port = process.env.PORT || 5000;
 
@@ -64,7 +72,6 @@ app.post('/tweetMe', (req, res) => {
       console.log(error, "this is err")
     }
     res.send(tweets)
-
   })
 })
 
@@ -76,7 +83,7 @@ app.get('/tweetMe', (req, res) => {
       tweets.push(data[i].full_text);
     }
     if (err){
-      console.log(error, "this is err")
+      console.log(err, "this is err")
     }
     res.send(tweets)
 
