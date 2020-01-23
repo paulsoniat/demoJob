@@ -29,3 +29,22 @@
   .box .row.footer {
     flex: 0 1 40px;
   }
+
+  .headerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    background: darkorange;
+    color: var(--on-background);
+  }
+
+  .headerNav {
+    flex: 0 0 82%;
+    padding: .2rem;
+  }
+
+  .mode {
+    flex: 0 0 15%;
+    padding: .2rem;
+    float: right;
+    max-width: 6rem;
+  }
