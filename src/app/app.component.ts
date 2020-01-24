@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   
   toggle() {
     const active = this.themeService.getActiveTheme() ;
-    console.log(active);
     if (active.name === 'light') {
       this.themeService.setTheme('dark');
     } else {
@@ -28,7 +27,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.apiService.getContacts().subscribe((res)=>{
-      this.tweetData = res;
+    this.tweetData = res;
     this.dataLoaded = true;    
     });
   }

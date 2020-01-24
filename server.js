@@ -26,7 +26,7 @@ var T = new Twit({
 })
 
 var options = { screen_name: 'exxonmobil',
-                count: 10,
+                count: 26,
                 tweet_mode: 'extended'};
 
 app.use(bodyParser.json());
@@ -61,22 +61,7 @@ app.get('/api/hello', (req, res) => {
   res.send({ express: 'Hello From Express' });
 });
 
-app.post('/tweetMe', (req, res) => {
-  console.log("in tweet me")
-  let tweets = [];
-  T.get('statuses/user_timeline', options , function(err, data) {
-    for (var i = 0; i < data.length ; i++) {
-      tweets.push(data[i].full_text);
-    }
-    if (err){
-      console.log(error, "this is err")
-    }
-    res.send(tweets)
-  })
-})
-
 app.get('/tweetMe', (req, res) => {
-  console.log("in tweet me")
   let tweets = [];
   T.get('statuses/user_timeline', options , function(err, data) {
     for (var i = 0; i < data.length ; i++) {
@@ -84,21 +69,6 @@ app.get('/tweetMe', (req, res) => {
     }
     if (err){
       console.log(err, "this is err")
-    }
-    res.send(tweets)
-
-  })
-})
-
-app.get('/tweetMe', (req, res) => {
-  console.log("in tweet me")
-  let tweets = [];
-  T.get('statuses/user_timeline', options , function(err, data) {
-    for (var i = 0; i < data.length ; i++) {
-      tweets.push(data[i].full_text);
-    }
-    if (err){
-      console.log(error, "this is err")
     }
     res.send(tweets)
 

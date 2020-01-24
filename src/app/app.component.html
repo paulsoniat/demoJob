@@ -4,9 +4,10 @@
   <div class="row header">
     <div class="headerContainer">
       <div class="headerNav">
-        Item 1
-        Item 2
-        Item 3
+                  <div class="nav-item"><a class="nav-link" routerLink="home">Home</a></div>
+                  <div class="nav-item"><a class="nav-link" routerLink="about">About</a></div>
+                  <div class="nav-item"><a class="nav-link" routerLink="courses">Courses</a></div>
+
       </div>
       <div class="mode">
         <span>Dark Mode</span>
@@ -21,13 +22,12 @@
   <div class="row content">
     <b>
       <div *ngIf="dataLoaded; else elseBlock">
-        <ul>
-          <li *ngFor="let tweet of tweetData; let i = index">
-            <div>
-              {{i}} {{tweet}}
+          <div class="liContainer" *ngFor="let tweet of tweetData; let i = index">
+            <div class="tweetContainer">
+               {{tweet}}
             </div>
-          </li>
-        </ul>
+          </div>
+
       </div>
       <ng-template #elseBlock><p>Spinner to show loading</p></ng-template>
     </b>
