@@ -7,11 +7,15 @@ import { ThemeModule } from './theme/theme.module';
 import { lightTheme } from './theme/light-theme';
 import { darkTheme } from './theme/dark-theme';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ThemeModule.forRoot({
       themes: [lightTheme, darkTheme],
       active: 'light'
-    })
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
