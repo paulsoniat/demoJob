@@ -1,13 +1,18 @@
 <div class="row header">
     <div class="headerContainer">
+      
       <div class="headerNav">
-        <div class="nav-item"><a class="nav-link" routerLink="/home">Tweeter</a></div>
+
+        <div class="nav-item"><a class="nav-link" routerLink="">Home</a></div>
+        <div class="nav-item"><a class="nav-link" routerLink="/tweets">Tweeter</a></div>
         <div class="nav-item"><a class="nav-link" routerLink="/about">About</a></div>
         <div class="nav-item"><a class="nav-link" routerLink="/courses">Courses</a></div>
+
         <div class="nav-item">
             <span>Dark Mode</span>
             <input type="checkbox" (click)="toggle()" >
-          </div>
+        </div>
+
       </div>
     </div>
     <router-outlet></router-outlet>   

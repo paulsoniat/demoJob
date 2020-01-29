@@ -65,7 +65,8 @@
   }
 
   .liContainer {
-    padding: 0px
+    padding: 0px;
+    text-align: center;
   }
 
   .nav-item {

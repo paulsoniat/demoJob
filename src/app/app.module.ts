@@ -10,7 +10,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { TweeterComponent } from './tweeter/tweeter.component';
+import { TweeterComponent } from './pages/tweeter/tweeter.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TweeterComponent } from './tweeter/tweeter.component';
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    TweeterComponent
+    TweeterComponent,
+    HomeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
