@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { apiService } from './api.service';
-import { Tweet } from './tweets';
 import { ThemeService } from './theme/theme.service';
 
 @Component({
@@ -10,25 +8,9 @@ import { ThemeService } from './theme/theme.service';
 })
 
 export class AppComponent implements OnInit {
-  constructor(private apiService: apiService, private themeService: ThemeService){ }
+  constructor(){ }
   title = 'demoJobTest';
-  public dataLoaded: boolean;
-  public tweetData: Array<Tweet>;
-  public tweetDataFromServer: Array<string>;
-  
-  toggle() {
-    const active = this.themeService.getActiveTheme() ;
-    if (active.name === 'light') {
-      this.themeService.setTheme('dark');
-    } else {
-      this.themeService.setTheme('light');
-    }
-  }
 
   ngOnInit(){
-    this.apiService.getContacts().subscribe((res)=>{
-    this.tweetData = res;
-    this.dataLoaded = true;    
-    });
   }
 }

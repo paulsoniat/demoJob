@@ -22,7 +22,6 @@ export class ThemeService {
   }
 
   setTheme(name: string) {
-    console.log("set theme")
     this.theme = name;
     this.themeChange.emit( this.getActiveTheme());
   }

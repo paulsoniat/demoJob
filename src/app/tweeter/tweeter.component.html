@@ -1,0 +1,13 @@
+<div class="row content">
+  <b>
+    <div *ngIf="dataLoaded; else elseBlock">
+        <div class="liContainer" *ngFor="let tweet of tweetData; let i = index">
+          <div class="tweetContainer">
+             {{tweet}}
+          </div>
+        </div>
+
+    </div>
+    <ng-template #elseBlock><p>Spinner to show loading</p></ng-template>
+  </b>
+</div>

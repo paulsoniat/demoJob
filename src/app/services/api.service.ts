@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from './../environments/environment';
+import { environment } from '../../environments/environment';
 
-import { Tweet } from './tweets';
+import { Tweet } from '../tweeter/tweets';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,6 @@ export class apiService {
   
   public getContacts(){
     let tweetList = this.httpClient.get<Tweet[]>(`${this.apiURL + this.tweetMe}`); 
-    console.log(tweetList);
     return tweetList;
 }
 

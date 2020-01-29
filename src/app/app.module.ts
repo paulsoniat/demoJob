@@ -9,13 +9,17 @@ import { darkTheme } from './theme/dark-theme';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FooterComponent } from './footer/footer.component';
+import { TweeterComponent } from './tweeter/tweeter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent,
+    TweeterComponent
   ],
   imports: [
     BrowserModule,
